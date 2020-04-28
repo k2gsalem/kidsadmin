@@ -25,6 +25,7 @@ Route::post('/login', 'UserController@login');
 Route::resource('albums', 'AlbumController');
 Route::resource('albums.photo', 'PhotoController');
 Route::resource('testimonials', 'TestimonialsController');
+
 // Route::get('users/{id}', function ($id) {
 
 // });

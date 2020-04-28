@@ -152,6 +152,8 @@ class TestimonialsController extends Controller
                     'contents' => $request->testimonial_desc
                 ]
             ]);
+        }else{
+            return redirect()->route('testimonials.edit', ['testimonial' => $id])->with('error',array(array('Server Error')) );
         }
         if ($response->headers()['Content-Type'][0] == "text/html; charset=UTF-8") {
             return redirect()->route('home');
@@ -179,7 +181,7 @@ class TestimonialsController extends Controller
             return redirect()->route('testimonials.index')->with('error', $error);
         }
         if ($response->headers()['Content-Type'][0] == "text/html; charset=UTF-8") {
-            
+
             return redirect()->route('home');
         }
         if ($response->ok()) {
